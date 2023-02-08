@@ -1,0 +1,12 @@
+sudo apt-get install protobuf-compiler libprotoc-dev
+pip3 install protobuf
+git clone https://github.com/jkjung-avt/tensorrt_demos.git
+cd tensorrt_demos
+sudo pip3 install Cython
+cd tensorrt_demos
+make
+cd nano/tensorrt_demos/ssd
+./install_pycuda.sh
+sudo pip3 install onnx==1.4.1
+cd ${HOME}/tensorrt_demos/plugins
+make
