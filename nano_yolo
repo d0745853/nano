@@ -10,3 +10,9 @@ cd nano/tensorrt_demos/ssd
 sudo pip3 install onnx==1.4.1
 cd ${HOME}/tensorrt_demos/plugins
 make
+cd ${HOME}/tensorrt_demos/yolo
+$ ./download_yolo.sh
+python3 yolo_to_onnx.py -m yolov4-tiny-416
+python3 onnx_to_tensorrt.py -m yolov4-tiny-416
+cd ${HOME}/tensorrt_demos
+$ python3 trt_yolo.py -m yolov4-416 --usb 0
